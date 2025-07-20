@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link";
-import { useState, useRef, useCallback} from "react"
-import { motion } from "framer-motion"
+import { useState, useRef } from "react"
+import { motion, useScroll, useMotionValueEvent} from "framer-motion"
 
 interface SubLinkType{
     title: string;
@@ -82,19 +82,47 @@ const backup: LinkType[] = [
 ]
 
 export default function Nav() {
-  const [activeSub, setActiveSub] = useState<null | number>(null);
+    const [activeSub, setActiveSub] = useState<null | number>(null);
+    const [isHidden, setIsHidden] = useState(false);
+    const { scrollY } = useScroll()
+    const lastYRef = useRef(0)
 
+    useMotionValueEvent(scrollY, "change", (y) => {
+        const difference = y - lastYRef.current;
+        if (Math.abs(difference) > 50){
+            setIsHidden(difference > 0)
+            lastYRef.current=y
+        } 
+    })
 
     return (
-        <div className="fixed z-10 flex w-full justify-center items-center -ml-15 gap-12 mt-4">
+        <motion.div 
+            className="fixed z-10 flex w-full justify-center items-center -ml-18 gap-12 top-3"
+            animate={isHidden ? "hidden" : "visible"}
+            variants={{
+                hidden:{
+                    y:"-80%"
+                },
+                visible: {
+                    y:"0%"
+                }
+            }}
+            transition={{duration:0.2}}
+        >
             <motion.div
                 className=""
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                transition={{
-                    duration: 0.3,
-                    ease: "linear",
+                animate={isHidden ? "hidden" : "visible"}
+                variants={{
+                    hidden:{
+                        y:"-100%",
+                        scale:0.9
+                    },
+                    visible: {
+                        y:"0%",
+                        scale:1
+                    }
                 }}
+                transition={{duration:0.2}}
             >
                 <Link 
                     href="/"
@@ -109,8 +137,15 @@ export default function Nav() {
                 </Link>
             </motion.div>
             <nav>
-                <ul className="flex gap-6 p-4 border-white border w-md justify-center rounded-full glass"
+                <motion.ul 
+                    initial={{opacity:0}}
+                    animate={{opacity:1}}
+                    transition={{
+                        duration: 0.3,
+                    }}
+                    className="flex gap-6 p-4 border-white border w-md justify-center rounded-full glass"
                     onPointerLeave={() => setActiveSub(null)}
+                    onHoverStart={() => setIsHidden(false)}
                 >
                     {backup.map((link, i) => (
                         <li
@@ -132,17 +167,11 @@ export default function Nav() {
                                     transition={{
                                         duration: 0.3,
                                         delay: (i+1) * 0.1,
-                                        ease: "linear",
                                     }}
                                 >
                                     <Link       
                                         className = "peer text-white link"
-                                        onFocus={() => {
-                                            console.log(activeSub)
-                                            console.log(link.id)
-                                            setActiveSub(link.id)
-                                        }}
-                                        onClick={() => setActiveSub(link.id)}
+                                        onFocus={() => {setActiveSub(isHidden ? null : link.id)}}
                                         href={link.attributes.href}
                                         aria-expanded = {activeSub === link.id}
                                         aria-controls = {`subnav-${link.id}`} 
@@ -177,8 +206,8 @@ export default function Nav() {
                             )}
                         </li>
                     ))}
-                </ul>
+                </motion.ul>
             </nav>
-        </div>
+        </motion.div>
     )
 }
