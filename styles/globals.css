@@ -2,9 +2,30 @@
 
 @import "tailwindcss";
 
+@layer base {
+  @property --color-a {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-b {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-c {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --color-a: #ff0000;
+  --color-b: #240000;
+  --color-c: #821010;
 }
 
 @theme inline {
@@ -18,12 +39,18 @@
   :root {
     --background: #000000;
     --foreground: #ededed;
+    --color-a: #ff0000;
+    --color-b: #240000;
+    --color-c: #821010;
+    --animate-blob: blob 25s infinite ease-in-out;
+    --animate-blob-reverse: blob 25s infinite ease-in-out reverse;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  
   font-family: "Figtree", sans-serif;
 }
 
@@ -40,4 +67,29 @@ body {
 
 .link{
   @apply hover:underline underline-offset-[6px]
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(20%, -25%);
+    border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+  }
+  25% {
+    transform: translate(10%, 10%);
+    border-radius: 20% 71% 47% 70% / 81% 15% 22% 54%;
+    rotate: 41deg;
+    scale: 1.15;
+  }
+  50% {
+    transform: translate(-45%, 30%);
+    border-radius: 100% 75% 92% 74% / 60% 80% 30% 70%;
+    rotate: -60deg;
+    scale: 1.05;
+  }
+  75% {
+    transform: translate(-25%, -50%);
+    border-radius: 40% 75% 92% 74% / 60% 80% 30% 70%;
+    rotate: -31deg;
+    scale: 1.05;
+  }
 }

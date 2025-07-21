@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useRef } from "react"
-import { motion, useScroll, useMotionValueEvent} from "framer-motion"
+import { motion, useScroll, useMotionValueEvent} from "motion/react"
 
 interface SubLinkType{
     title: string;
@@ -27,20 +27,6 @@ const backup: LinkType[] = [
             subnav: [
                 {title: "History", href: "/"},
                 {title: "Magnet Life", href:"/"}
-            ]
-        }
-    },
-    {
-        id: 2,
-        attributes: {
-            title: "Apply",
-            href: "/apply",
-            subnav: [
-                {title: "Who", href: "/"},
-                {title: "What", href:"/"},
-                {title: "When", href:"/"},
-                {title: "Where", href:"/"},
-                {title: "How", href:"/"}
             ]
         }
     },
@@ -79,6 +65,20 @@ const backup: LinkType[] = [
             ]
         }
     },
+    {
+        id: 2,
+        attributes: {
+            title: "Apply",
+            href: "/apply",
+            subnav: [
+                {title: "Who", href: "/"},
+                {title: "What", href:"/"},
+                {title: "When", href:"/"},
+                {title: "Where", href:"/"},
+                {title: "How", href:"/"}
+            ]
+        }
+    },
 ]
 
 export default function Nav() {
@@ -89,7 +89,7 @@ export default function Nav() {
 
     useMotionValueEvent(scrollY, "change", (y) => {
         const difference = y - lastYRef.current;
-        if (Math.abs(difference) > 50){
+        if (Math.abs(difference) > 100){
             setIsHidden(difference > 0)
             lastYRef.current=y
         } 
@@ -97,11 +97,11 @@ export default function Nav() {
 
     return (
         <motion.div 
-            className="fixed z-10 flex w-full justify-center items-center -ml-18 gap-12 top-3"
+            className="fixed z-50 flex w-full justify-center items-center -ml-9 gap-12 top-6"
             animate={isHidden ? "hidden" : "visible"}
             variants={{
                 hidden:{
-                    y:"-80%"
+                    y:"-96%"
                 },
                 visible: {
                     y:"0%"
@@ -112,17 +112,20 @@ export default function Nav() {
             <motion.div
                 className=""
                 animate={isHidden ? "hidden" : "visible"}
+                initial={{opacity:0}}
                 variants={{
                     hidden:{
                         y:"-100%",
-                        scale:0.9
+                        scale:0.9,
+                        opacity:1
                     },
                     visible: {
                         y:"0%",
-                        scale:1
+                        scale:1,
+                        opacity:1
                     }
                 }}
-                transition={{duration:0.2}}
+                transition={{duration:0.1}}
             >
                 <Link 
                     href="/"
@@ -143,7 +146,7 @@ export default function Nav() {
                     transition={{
                         duration: 0.3,
                     }}
-                    className="flex gap-6 p-4 border-white border w-md justify-center rounded-full glass"
+                    className="flex gap-6 px-6 py-2 border-white border w-md justify-between rounded-full "
                     onPointerLeave={() => setActiveSub(null)}
                     onHoverStart={() => setIsHidden(false)}
                 >
@@ -180,7 +183,7 @@ export default function Nav() {
                                     </Link>
                                     <div
                                         id = {`subnav-${link.id}`}
-                                        className="absolute -left-5 top-full hidden rounded-xl text-white peer-aria-expanded:block w-sm mt-10 border border-white glass"
+                                        className="absolute -left-5 top-full hidden rounded-xl text-white peer-aria-expanded:block w-sm mt-6 border border-white glass"
                                     >
                                         <div className="w-full -mt-7.5 pt-5">
                                             <div className="w-0 h-0 text-white ml-8
