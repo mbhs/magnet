@@ -97,7 +97,7 @@ export default function Nav() {
 
     return (
         <motion.div 
-            className="fixed z-50 flex w-full justify-center items-center -ml-9 gap-12 top-6"
+            className="fixed z-50 flex w-full justify-between items-center top-6"
             animate={isHidden ? "hidden" : "visible"}
             variants={{
                 hidden:{
@@ -110,7 +110,7 @@ export default function Nav() {
             transition={{duration:0.2}}
         >
             <motion.div
-                className=""
+                className="ml-8"
                 animate={isHidden ? "hidden" : "visible"}
                 initial={{opacity:0}}
                 variants={{
@@ -146,7 +146,7 @@ export default function Nav() {
                     transition={{
                         duration: 0.3,
                     }}
-                    className="flex gap-6 px-6 py-2 border-white border w-md justify-between rounded-full "
+                    className="flex gap-6 w-md justify-between rounded-full mr-16"
                     onPointerLeave={() => setActiveSub(null)}
                     onHoverStart={() => setIsHidden(false)}
                 >
