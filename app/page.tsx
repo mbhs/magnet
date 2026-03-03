@@ -11,7 +11,11 @@ export default function Home() {
       <div className="-mt-[100vh] h-[200vh] w-full sticky">
         <div className="sticky top-0 min-h-screen flex items-center justify-center">
           <p className="text-4xl">
-            testtesttesttesttesttesttesttesttesttest
+            Magnet Mission
+          </p>
+          <p className="text">
+            Recognizing that education is an individual experience that depends on the unique talents and interests of each person, the mission of the Blair Magnet Program is to provide an environment in which each person's education is maximized by emphasizing the interrelationships among the disciplines, developing a repertoire of problem-solving techniques, and pursuing both independent and collaborative research projects.
+            To realize the above mission, the staff nurtures the special talents of its academically able students by fostering individualism, independent thinking, and self-confidence by challenging those students through a unique, diversified curriculum. The environment, structure, and content promote the self-learner concept in which students participate in constructing their own knowledge base and learn problem-solving strategies that foster the multidisciplinary approach. The scope of their education extends beyond traditional classroom boundaries as students are asked to connect with a community that includes not only parents, mentors, other students, and staff but also a physical environment as diverse as our region
           </p>
         </div>
       </div>
