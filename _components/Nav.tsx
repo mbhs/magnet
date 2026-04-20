@@ -14,7 +14,7 @@ interface LinkType {
     attributes: {
         title: string;
         href: string;
-        subnav: SubLinkType[]
+        subnav?: SubLinkType[]
     }
 }
 
@@ -25,8 +25,7 @@ const backup: LinkType[] = [
             title: "About",
             href: "/about",
             subnav: [
-                {title: "History", href: "/"},
-                {title: "Magnet Life", href:"/"}
+                {title: "Magnet Life", href:"/about/life"}
             ]
         }
     },
