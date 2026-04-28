@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Link } from '@heroui/react';
+import { Button , Link} from '@heroui/react';
+import Link2 from "next/link";
 
 //
 
@@ -13,8 +14,8 @@ export default function Home() {
           <p className="z-10 text-white font-bold text-[60px]/20">A place to</p>
           <p className="z-10 font-bold text-[80px]/20 text-white">&gt; experiment</p>
           <p className="z-10 text-[20px]/20 text-[#cccccc]">Welcome to the STEM Magnet Program at Montgomery Blair High School.</p>
-          <div className="flex flex-row gap-4"><Link src="/about" style={{ textDecoration: 'none' }}><Button className="z-10 bg-[#7f1d1d]" size="lg">Learn More</Button></Link>
-          <Link src="/apply" style={{ textDecoration: 'none' }}><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></Link></div>
+          <div className="flex flex-row gap-4"><Link2 href="/about" style={{ textDecoration: 'none' }}><Button className="z-10 bg-[#7f1d1d]" size="lg">Learn More</Button></Link2>
+          <Link2 href="/apply" style={{ textDecoration: 'none' }}><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></Link2></div>
         </div>
       </div>
 

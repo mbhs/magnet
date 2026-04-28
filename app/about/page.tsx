@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button, Link, Table} from '@heroui/react';
+import Link2 from "next/link";
 
 const achievementRows = [
   {
@@ -61,8 +62,8 @@ export default function About() {
         <div  className="wrapper relative overflow-clip w-6xl h-full w-full flex justify-center items-left z-10 flex-col px-10 before:absolute before:h-[60%] before:w-[40%] before:animate-[blob_30s_infinite_linear] before:rounded-full before:bg-red-900 before:opacity-40 before:blur-[60px] after:absolute after:h-[80%] after:w-[60%] after:animate-blob-reverse after:rounded-full after:bg-red-900 after:opacity-40 after:animate-[blob_20s_infinite_linear_reverse] after:left-[50%] after:top-[50%] after:blur-[60px] overflow-y-visible relative">
           <p className="z-10 text-white font-bold text-[60px]/20">About the Magnet</p>
           <p className="z-10 text-[20px]/20 text-[#cccccc]">Welcome to the STEM Magnet Program at Montgomery Blair High School.</p>
-          <div className="flex flex-row gap-4"><Link src="/about" style={{ textDecoration: 'none' }}><Button className="z-50 bg-[#7f1d1d]" size="lg">Learn More</Button></Link>
-          <Link src="/apply" style={{ textDecoration: 'none' }}><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></Link></div>
+          <div className="flex flex-row gap-4"><Link2 href="/about" style={{ textDecoration: 'none' }}><Button className="z-50 bg-[#7f1d1d]" size="lg">Learn More</Button></Link2>
+          <Link2 href="/apply" style={{ textDecoration: 'none' }}><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></Link2></div>
         </div>
       </div>
 

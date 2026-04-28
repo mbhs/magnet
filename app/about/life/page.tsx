@@ -7,14 +7,14 @@ export default function Life() {
   return (
     <div className="h-[100%] w-[100%]" style={{ background: 'linear-gradient(to bottom, #460809 80%,  #230405)' }}>
       <div className = "flex justify-center items-center h-screen">
-        <div  className="wrapper relative overflow-clip w-6xl h-full w-full flex justify-center items-left z-10 flex-col px-10 before:absolute before:h-[60%] before:w-[40%] before:animate-[blob_30s_infinite_linear] before:rounded-full before:bg-red-900 before:opacity-40 before:blur-[60px] after:absolute after:h-[80%] after:w-[60%] after:animate-blob-reverse after:rounded-full after:bg-red-900 after:opacity-40 after:animate-[blob_20s_infinite_linear_reverse] after:left-[50%] after:top-[50%] after:blur-[60px] overflow-y-visible">
+        <div  className="relative wrapper relative overflow-clip w-6xl h-full w-full flex justify-center items-left z-10 flex-col px-10 before:absolute before:h-[60%] before:w-[40%] before:animate-[blob_30s_infinite_linear] before:rounded-full before:bg-red-900 before:opacity-40 before:blur-[60px] after:absolute after:h-[80%] after:w-[60%] after:animate-blob-reverse after:rounded-full after:bg-red-900 after:opacity-40 after:animate-[blob_20s_infinite_linear_reverse] after:left-[50%] after:top-[50%] after:blur-[60px] overflow-y-visible">
           <p className="z-10 text-white font-bold text-[60px]/20">Magnet Life</p>
           <p className="z-10 text-[20px]/20 text-[#cccccc]">What is it like being a magnet student?</p>
         </div>
       </div>
 
       {/* magnet mission */}
-      <div className="min-h-screen h-full w-full p-16 flex justify-center items-center z-50 relative">
+      <div className="relative z-50 min-h-screen h-full w-full p-16 flex justify-center items-center z-50 relative">
         <div style={{ background: "linear-gradient(to bottom, rgba(127,29,29,0.2)" }} className="flex flex-col justify-center w-[85%] rounded-xl bg-red-900 h-[100%] min-h-[90vh] text-center items-center">
           <p className="font-bold text-[100px] text-[#eeeeee] pt-10">Magnet Difference</p>
           <div className="border-1 border-white w-[10%]"></div>
@@ -45,6 +45,29 @@ export default function Life() {
       
 
       {/* current news */}
+      <div className="relative z-50 min-h-screen h-full w-full p-16 flex justify-center items-center z-50 relative">
+        <div style={{ background: "linear-gradient(to bottom, rgba(127,29,29,0.2)" }} className="flex flex-col justify-center w-[85%] rounded-xl bg-red-900 h-[100%] min-h-[90vh] text-center items-center">
+          <p className="font-bold text-[100px] text-[#eeeeee] pt-10">Year by Year Breakdown</p>
+          <div className="border-1 border-white w-[10%]"></div>
+        <div className="flex flex-col rounded-xl gap-10 p-10">
+            <div className="flex flex-row bg-[#7f1d1d]/10 rounded-xl p-10 gap-4 justify-center items-center">
+                <p className="text-white font-bold text-[32px] m-10">9th Grade</p>
+                <Image src="/assets/life 1.jpg" width={200} height={150} alt="magnet life" className="rounded-sm"></Image>
+                <p className="text-white text-[16px]">Ninth grade students will take physics, chemistry, computer science, engineering and a math class as part of the magnet program.  We use interdisciplinary projects and events to help encourage students to think across STEM Fields.  Part of the ninth grade experience is a field trip with Poolesville High School to Lake Needwood to look at water chemistry and indirect measurement techniques, the construction of a trebuchet after careful mathematical modeling, and a Chemistry & Engineering research project to end the year.</p>
+            </div>
+            <div className="flex flex-row bg-[#7f1d1d]/10 rounded-xl p-10 gap-4 justify-center items-center">
+                <p className="text-white font-bold text-[32px] m-10">10th Grade</p>
+                <Image src="/assets/life 2.jpg" width={200} height={150} alt="magnet life" className="rounded-sm"></Image>
+                <p className="text-white text-[16px]">Tenth grade students will take biology, earth-science, computer science, engineering and math.  We look at the interplay with robotics and planetary exploration and take a four-day ecology field trip to the Chincoteague Bay in Virginia.</p>
+            </div>
+            <div className="flex flex-row bg-[#7f1d1d]/10 rounded-xl p-10 gap-4 justify-center items-center">
+                <p className="text-white font-bold text-[32px] m-10">11th-12th Grade</p>
+                <Image src="/assets/life 3.jpg" width={200} height={150} alt="magnet life" className="rounded-sm"></Image>
+                <p className="text-white text-[16px]">Upper-classmen have a lot of their freedom in their schedule.  They will finish out the required courses by the first semester of 11th grade and then be able to select from the numerous electives in STEM fields that Blair has to offer.  Students will complete an internship between their junior and senior years at a local university or laboratory and write it up as their Senior Reseaarch Project.  Some electives, like Entomology, will have field experiences.  Each year ends with the premier high school puzzling tounrament, PuzzlePalooza.</p>
+            </div>
+        </div>
+        </div>
+      </div>
       
 
     </div>
