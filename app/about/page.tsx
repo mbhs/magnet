@@ -58,15 +58,16 @@ export default function About() {
   return (
     <div className="h-[100%] w-[100%]" style={{ background: 'linear-gradient(to bottom, #460809 80%,  #230405)' }}>
       <div className = "flex justify-center items-center h-screen">
-        <div  className="wrapper relative overflow-clip w-6xl h-full w-full flex justify-center items-left z-10 flex-col px-10 before:absolute before:h-[60%] before:w-[40%] before:animate-[blob_30s_infinite_linear] before:rounded-full before:bg-red-900 before:opacity-40 before:blur-[60px] after:absolute after:h-[80%] after:w-[60%] after:animate-blob-reverse after:rounded-full after:bg-red-900 after:opacity-40 after:animate-[blob_20s_infinite_linear_reverse] after:left-[50%] after:top-[50%] after:blur-[60px] overflow-y-visible">
+        <div  className="wrapper relative overflow-clip w-6xl h-full w-full flex justify-center items-left z-10 flex-col px-10 before:absolute before:h-[60%] before:w-[40%] before:animate-[blob_30s_infinite_linear] before:rounded-full before:bg-red-900 before:opacity-40 before:blur-[60px] after:absolute after:h-[80%] after:w-[60%] after:animate-blob-reverse after:rounded-full after:bg-red-900 after:opacity-40 after:animate-[blob_20s_infinite_linear_reverse] after:left-[50%] after:top-[50%] after:blur-[60px] overflow-y-visible relative">
           <p className="z-10 text-white font-bold text-[60px]/20">About the Magnet</p>
           <p className="z-10 text-[20px]/20 text-[#cccccc]">Welcome to the STEM Magnet Program at Montgomery Blair High School.</p>
-          <div className="flex flex-row gap-4"><Button className="z-10 bg-[#7f1d1d]" size="lg">Learn More</Button><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></div>
+          <div className="flex flex-row gap-4"><Link src="/about" style={{ textDecoration: 'none' }}><Button className="z-50 bg-[#7f1d1d]" size="lg">Learn More</Button></Link>
+          <Link src="/apply" style={{ textDecoration: 'none' }}><Button className="z-10 bg-white text-[#7f1d1d]" size="lg">Apply</Button></Link></div>
         </div>
       </div>
 
       {/* descriptions */}
-      <div className="min-h-screen h-full w-full p-16 flex justify-center items-center">
+      <div className="min-h-screen h-full w-full p-16 flex justify-center items-center relative z-50">
         <p className="font-bold text-white text-[32px] text-center">In 1985, Montgomery County Public Schools opened its Science, Mathematics, and Computer Science Magnet Program within Montgomery Blair High School in Silver Spring, Maryland. </p>
       </div>
       <div className="min-h-screen h-full w-full p-16 flex justify-center items-center">
@@ -75,7 +76,7 @@ export default function About() {
       <div className="min-h-screen h-full w-full p-16 flex justify-center items-center flex flex-col gap-4 ">
         <p className="font-bold text-white text-[32px] text-center w-[80%]">Since Magnet students have a number of extra academic requirements, magnet students have an eight-period day, instead of the normal seven-period day of most county high school students.</p>
         <p className="font-bold text-[#cccccc] text-[20px] text-center w-[80%]">Magnet students can (and do!) take full advantage of Blair's other extracurriculars such as athletics, student clubs, the school's bands and plays, and other activities.</p>
-        <Button className="bg-[#7f1d1d]" size="md">Learn More</Button>
+        <Link src="/about/life"><Button className="bg-[#7f1d1d]" size="md">Learn More</Button></Link>
       </div>
 
       

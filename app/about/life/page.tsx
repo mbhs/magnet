@@ -14,18 +14,29 @@ export default function Life() {
       </div>
 
       {/* magnet mission */}
-      <div className="min-h-screen h-full w-full p-16 flex justify-center items-center">
+      <div className="min-h-screen h-full w-full p-16 flex justify-center items-center z-50 relative">
         <div style={{ background: "linear-gradient(to bottom, rgba(127,29,29,0.2)" }} className="flex flex-col justify-center w-[85%] rounded-xl bg-red-900 h-[100%] min-h-[90vh] text-center items-center">
-          <p className="font-bold text-[100px] text-[#eeeeee]">Magnet Difference</p>
+          <p className="font-bold text-[100px] text-[#eeeeee] pt-10">Magnet Difference</p>
           <div className="border-1 border-white w-[10%]"></div>
         <p className="text-[#eeeeee] w-[70%] mt-[16px]">
             Since all MCPS students have strong options with their local high schools, magnet programs provide unique opportunities.
         </p>
-        <div className="flex flex-row rounded-xl gap-10">
-            <Image src="/assets/apple.png" width={200} height={200} alt="apple" className="rounded-xl"></Image>
-            <div className="flex flex-col bg-[#7f1d1d]/10 rounded-xl">
-                <p>Heading</p>
-                <p>Description</p>
+        <div className="grid grid-cols-2 rounded-xl gap-10 p-10">
+            <div className="flex flex-col bg-[#7f1d1d]/10 rounded-xl p-10 gap-4">
+                <p className="text-white font-bold text-[32px]">An eight-period school day</p>
+                <p className="text-white text-[16px]">The magnet program school day ends at 3:20pm instead of 2:30pm so that students can take one more class than in a traditional MCPS high school. After-school activities typically start around 3:30pm so students can participate in everything Blair has to offer.</p>
+            </div>
+            <div className="flex flex-col bg-[#7f1d1d]/10 rounded-xl p-10 gap-4">
+                <p className="text-white font-bold text-[32px]">Unique Courses</p>
+                <p className="text-white text-[16px]">As Blair is a large school, there are more electives to take at Blair than any other school in MCPS.  This includes a large range of STEM Electives that are specific to the magnet program.</p>
+            </div>
+            <div className="flex flex-col bg-[#7f1d1d]/10 rounded-xl p-10 gap-4">
+                <p className="text-white font-bold text-[32px]">Blocked Classes</p>
+                <p className="text-white text-[16px]">During a student's freshmen year, core courses are blocked so that the same group os students takes all the core courses together.  This allows for interdisciplinary projects to be given across content areas and supervised by multiple teachers.</p>
+            </div>
+            <div className="flex flex-col bg-[#7f1d1d]/10 rounded-xl p-10 gap-4">
+                <p className="text-white font-bold text-[32px]">Quality Instruction</p>
+                <p className="text-white text-[16px]">MCPS high schools have a great number of excellent teachers across all subject areas.  Within the magnet program, teachers are selected not only for their instructional approach, but also their content knowledge that goes well beyond typical course requirements.  Teachers expect that students not only meet course objectives, but help students with independent work that expands beyond the scope of even the most advanced courses.  </p>
             </div>
         </div>
         </div>
@@ -34,16 +45,7 @@ export default function Life() {
       
 
       {/* current news */}
-      <div className="min-h-screen h-full w-full py-[15%] px-16 flex justify-center items-center z-40">
-        <div style={{ background: "linear-gradient(to bottom, rgba(127,29,29,0.2)" }} className="flex justify-center w-[85%] rounded-2xl h-[100%] min-h-[90vh] shadow-xl">
-          <div className="h-[100%] my-16 mx-12 flex flex-col justify-center items-center">
-            <h1 className="font-bold text-[50px]/16 text-[#eeeeee] text-center">MAGNET ACHEIVEMENTS</h1>
-            <span className="my-10 w-[80%] border-1 border-white"></span>
-
-          </div>
-        </div>
-        
-      </div>
+      
 
     </div>
   );
