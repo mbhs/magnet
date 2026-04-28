@@ -77,7 +77,7 @@ export default function About() {
       <div className="min-h-screen h-full w-full p-16 flex justify-center items-center flex flex-col gap-4 ">
         <p className="font-bold text-white text-[32px] text-center w-[80%]">Since Magnet students have a number of extra academic requirements, magnet students have an eight-period day, instead of the normal seven-period day of most county high school students.</p>
         <p className="font-bold text-[#cccccc] text-[20px] text-center w-[80%]">Magnet students can (and do!) take full advantage of Blair's other extracurriculars such as athletics, student clubs, the school's bands and plays, and other activities.</p>
-        <Link src="/about/life"><Button className="bg-[#7f1d1d]" size="md">Learn More</Button></Link>
+        <Link2 href="/about/life"><Button className="bg-[#7f1d1d]" size="md">Learn More</Button></Link2>
       </div>
 
       
